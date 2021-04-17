@@ -10,6 +10,7 @@
 
     <Button
         android:id="@+id/c4"
+        android:onClick="play"
         style="@style/whiteKeyStyle"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
@@ -19,6 +20,7 @@
 
     <Button
         android:id="@+id/d4"
+        android:onClick="play"
         style="@style/whiteKeyStyle"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
@@ -28,6 +30,7 @@
 
     <Button
         android:id="@+id/e4"
+        android:onClick="play"
         style="@style/whiteKeyStyle"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
@@ -37,6 +40,7 @@
 
     <Button
         android:id="@+id/f4"
+        android:onClick="play"
         style="@style/whiteKeyStyle"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
@@ -45,6 +49,7 @@
 
     <Button
         android:id="@+id/f5"
+        android:onClick="play"
         style="@style/whiteKeyStyle"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
@@ -54,6 +59,7 @@
 
     <Button
         android:id="@+id/d5"
+        android:onClick="play"
         style="@style/whiteKeyStyle"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
@@ -62,7 +68,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/h4"
+        android:id="@+id/b4"
+        android:onClick="play"
         style="@style/whiteKeyStyle"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
@@ -72,6 +79,7 @@
 
     <Button
         android:id="@+id/a4"
+        android:onClick="play"
         style="@style/whiteKeyStyle"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
@@ -81,15 +89,17 @@
 
     <Button
         android:id="@+id/c5"
+        android:onClick="play"
         style="@style/whiteKeyStyle"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/h4"
+        app:layout_constraintStart_toEndOf="@+id/b4"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/g5"
+        android:onClick="play"
         style="@style/whiteKeyStyle"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
@@ -99,6 +109,7 @@
 
     <Button
         android:id="@+id/g4"
+        android:onClick="play"
         style="@style/whiteKeyStyle"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
@@ -108,6 +119,7 @@
 
     <Button
         android:id="@+id/e5"
+        android:onClick="play"
         style="@style/whiteKeyStyle"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
@@ -117,6 +129,7 @@
 
     <Button
         android:id="@+id/a5"
+        android:onClick="play"
         style="@style/whiteKeyStyle"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
@@ -125,7 +138,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/h5"
+        android:id="@+id/b5"
+        android:onClick="play"
         style="@style/whiteKeyStyle"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
@@ -135,6 +149,7 @@
 
     <Button
         android:id="@+id/cis4"
+        android:onClick="play"
         style="@style/blackKeyStyle"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
@@ -143,6 +158,7 @@
 
     <Button
         android:id="@+id/dis4"
+        android:onClick="play"
         style="@style/blackKeyStyle"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
@@ -151,6 +167,7 @@
 
     <Button
         android:id="@+id/fis4"
+        android:onClick="play"
         style="@style/blackKeyStyle"
         android:layout_marginStart="62dp"
         android:layout_marginLeft="62dp"
@@ -159,6 +176,7 @@
 
     <Button
         android:id="@+id/gis4"
+        android:onClick="play"
         style="@style/blackKeyStyle"
         android:layout_marginStart="11dp"
         android:layout_marginLeft="11dp"
@@ -167,6 +185,7 @@
 
     <Button
         android:id="@+id/cis5"
+        android:onClick="play"
         style="@style/blackKeyStyle"
         android:layout_marginStart="62dp"
         android:layout_marginLeft="62dp"
@@ -175,6 +194,7 @@
 
     <Button
         android:id="@+id/ais4"
+        android:onClick="play"
         style="@style/blackKeyStyle"
         android:layout_marginStart="11dp"
         android:layout_marginLeft="11dp"
@@ -183,6 +203,7 @@
 
     <Button
         android:id="@+id/fis5"
+        android:onClick="play"
         style="@style/blackKeyStyle"
         android:layout_marginStart="62dp"
         android:layout_marginLeft="62dp"
@@ -191,6 +212,7 @@
 
     <Button
         android:id="@+id/dis5"
+        android:onClick="play"
         style="@style/blackKeyStyle"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
@@ -199,6 +221,7 @@
 
     <Button
         android:id="@+id/gis5"
+        android:onClick="play"
         style="@style/blackKeyStyle"
         android:layout_marginStart="11dp"
         android:layout_marginLeft="11dp"
@@ -207,6 +230,7 @@
 
     <Button
         android:id="@+id/ais5"
+        android:onClick="play"
         style="@style/blackKeyStyle"
         android:layout_marginStart="11dp"
         android:layout_marginLeft="11dp"
