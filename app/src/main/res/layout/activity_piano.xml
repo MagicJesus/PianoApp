@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:background="@color/teal_700"
+    tools:context=".PianoActivity">
+
+    <Button
+        android:id="@+id/c4"
+        style="@style/whiteKeyStyle"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/d4"
+        style="@style/whiteKeyStyle"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/c4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/e4"
+        style="@style/whiteKeyStyle"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/d4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/f4"
+        style="@style/whiteKeyStyle"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/e4" />
+
+    <Button
+        android:id="@+id/f5"
+        style="@style/whiteKeyStyle"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/e5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/d5"
+        style="@style/whiteKeyStyle"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/c5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/h4"
+        style="@style/whiteKeyStyle"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/a4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/a4"
+        style="@style/whiteKeyStyle"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/g4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/c5"
+        style="@style/whiteKeyStyle"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/h4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/g5"
+        style="@style/whiteKeyStyle"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/f5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/g4"
+        style="@style/whiteKeyStyle"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/f4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/e5"
+        style="@style/whiteKeyStyle"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/d5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/a5"
+        style="@style/whiteKeyStyle"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/g5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/h5"
+        style="@style/whiteKeyStyle"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/a5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/cis4"
+        style="@style/blackKeyStyle"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/dis4"
+        style="@style/blackKeyStyle"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toEndOf="@+id/cis4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/fis4"
+        style="@style/blackKeyStyle"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        app:layout_constraintStart_toEndOf="@+id/dis4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/gis4"
+        style="@style/blackKeyStyle"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        app:layout_constraintStart_toEndOf="@+id/fis4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/cis5"
+        style="@style/blackKeyStyle"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        app:layout_constraintStart_toEndOf="@+id/ais4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ais4"
+        style="@style/blackKeyStyle"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        app:layout_constraintStart_toEndOf="@+id/gis4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/fis5"
+        style="@style/blackKeyStyle"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        app:layout_constraintStart_toEndOf="@+id/dis5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/dis5"
+        style="@style/blackKeyStyle"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toEndOf="@+id/cis5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/gis5"
+        style="@style/blackKeyStyle"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        app:layout_constraintStart_toEndOf="@+id/fis5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ais5"
+        style="@style/blackKeyStyle"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        app:layout_constraintStart_toEndOf="@+id/gis5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
