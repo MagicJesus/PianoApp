@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PianoApp">
-        <activity android:name=".PianoActivity" android:parentActivityName=".MainActivity" android:screenOrientation="landscape"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".PianoActivity" android:parentActivityName=".MainActivity" android:screenOrientation="sensorLandscape"></activity>
+        <activity android:name=".MainActivity" android:screenOrientation="sensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

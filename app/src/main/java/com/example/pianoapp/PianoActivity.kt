@@ -1,5 +1,6 @@
 package com.example.pianoapp
 
+import android.graphics.Color
 import android.media.AudioAttributes
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

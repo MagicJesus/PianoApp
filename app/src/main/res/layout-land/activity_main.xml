@@ -25,7 +25,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="83dp"
         android:layout_marginLeft="83dp"
-        android:layout_marginTop="185dp"
+        android:layout_marginTop="96dp"
         android:layout_marginEnd="83dp"
         android:layout_marginRight="83dp"
         android:background="@android:drawable/spinner_dropdown_background"
