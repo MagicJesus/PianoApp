@@ -71,13 +71,63 @@ class PianoActivity : AppCompatActivity() {
         }
 
         // TODO
-        if (selectedInstrument == "Piano") {
-
+        if (selectedInstrument == "Grand Piano") {
+            notes[0] = soundPool.load(baseContext, R.raw.a4_piano, 1)
+            notes[1] = soundPool.load(baseContext, R.raw.ais4_piano, 1)
+            notes[2] = soundPool.load(baseContext, R.raw.b4_piano, 1)
+            notes[3] = soundPool.load(baseContext, R.raw.c4_piano, 1)
+            notes[4] = soundPool.load(baseContext, R.raw.cis4_piano, 1)
+            notes[5] = soundPool.load(baseContext, R.raw.d4_piano, 1)
+            notes[6] = soundPool.load(baseContext, R.raw.dis4_piano, 1)
+            notes[7] = soundPool.load(baseContext, R.raw.e4_piano, 1)
+            notes[8] = soundPool.load(baseContext, R.raw.f4_piano, 1)
+            notes[9] = soundPool.load(baseContext, R.raw.fis4_piano, 1)
+            notes[10] = soundPool.load(baseContext, R.raw.g4_piano, 1)
+            notes[11] = soundPool.load(baseContext, R.raw.gis4_piano, 1)
+            notes[12] = soundPool.load(baseContext, R.raw.a5_piano, 1)
+            notes[13] = soundPool.load(baseContext, R.raw.ais5_piano, 1)
+            notes[14] = soundPool.load(baseContext, R.raw.b5_piano, 1)
+            notes[15] = soundPool.load(baseContext, R.raw.c5_piano, 1)
+            notes[16] = soundPool.load(baseContext, R.raw.cis5_piano, 1)
+            notes[17] = soundPool.load(baseContext, R.raw.d5_piano, 1)
+            notes[18] = soundPool.load(baseContext, R.raw.dis5_piano, 1)
+            notes[19] = soundPool.load(baseContext, R.raw.e5_piano, 1)
+            notes[20] = soundPool.load(baseContext, R.raw.f5_piano, 1)
+            notes[21] = soundPool.load(baseContext, R.raw.fis5_piano, 1)
+            notes[22] = soundPool.load(baseContext, R.raw.g5_piano, 1)
+            notes[23] = soundPool.load(baseContext, R.raw.gis5_piano, 1)
         }
 
         // TODO
         if (selectedInstrument == "Organ") {
 
+        }
+
+        if (selectedInstrument == "Electric Piano") {
+            notes[0] = soundPool.load(baseContext, R.raw.a4_elec, 1)
+            notes[1] = soundPool.load(baseContext, R.raw.ais4_elec, 1)
+            notes[2] = soundPool.load(baseContext, R.raw.b4_elec, 1)
+            notes[3] = soundPool.load(baseContext, R.raw.c4_elec, 1)
+            notes[4] = soundPool.load(baseContext, R.raw.cis4_elec, 1)
+            notes[5] = soundPool.load(baseContext, R.raw.d4_elec, 1)
+            notes[6] = soundPool.load(baseContext, R.raw.dis4_elec, 1)
+            notes[7] = soundPool.load(baseContext, R.raw.e4_elec, 1)
+            notes[8] = soundPool.load(baseContext, R.raw.f4_elec, 1)
+            notes[9] = soundPool.load(baseContext, R.raw.fis4_elec, 1)
+            notes[10] = soundPool.load(baseContext, R.raw.g4_elec, 1)
+            notes[11] = soundPool.load(baseContext, R.raw.gis4_elec, 1)
+            notes[12] = soundPool.load(baseContext, R.raw.a5_elec, 1)
+            notes[13] = soundPool.load(baseContext, R.raw.ais5_elec, 1)
+            notes[14] = soundPool.load(baseContext, R.raw.b5_elec, 1)
+            notes[15] = soundPool.load(baseContext, R.raw.c5_elec, 1)
+            notes[16] = soundPool.load(baseContext, R.raw.cis5_elec, 1)
+            notes[17] = soundPool.load(baseContext, R.raw.d5_elec, 1)
+            notes[18] = soundPool.load(baseContext, R.raw.dis5_elec, 1)
+            notes[19] = soundPool.load(baseContext, R.raw.e5_elec, 1)
+            notes[20] = soundPool.load(baseContext, R.raw.f5_elec, 1)
+            notes[21] = soundPool.load(baseContext, R.raw.fis5_elec, 1)
+            notes[22] = soundPool.load(baseContext, R.raw.g5_elec, 1)
+            notes[23] = soundPool.load(baseContext, R.raw.gis5_elec, 1)
         }
     }
 

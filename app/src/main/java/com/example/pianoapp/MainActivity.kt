@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         spinner = findViewById(R.id.instrumentSpinner)
-        instruments = arrayOf("Grand Piano", "Organ", "Guitar")
+        instruments = arrayOf("Grand Piano", "Organ", "Guitar", "Electric Piano")
         arrAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item,
             instruments)
 
