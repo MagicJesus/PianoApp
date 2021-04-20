@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Piano App</string>
-    <string name="welcome_string">Welcome to Piano App!</string>
-    <string name="start_piano_activity_string">Start!</string>
-
+    <string name="welcomeString">Piano App</string>
+    <string name="playString">PLAY</string>
+    <string name="displayTonesOn">Display tones: ON</string>
+    <string name="displayTonesOff">Display tones: OFF</string>
 </resources>

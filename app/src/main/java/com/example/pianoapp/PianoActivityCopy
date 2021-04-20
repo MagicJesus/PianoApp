@@ -1,0 +1,281 @@
+class PianoActivity : AppCompatActivity() {
+
+    private lateinit var selectedInstrument: String
+    private lateinit var text: TextView
+    private lateinit var cButton: Button
+    private lateinit var cisButton: Button
+    private var streamIDC5 = 0
+    private var streamIDCis5 = 0
+
+    // SoundPool to klasa do zarządzania i odgrywania audio, to zbiór próbek
+    // maxStream - maksymalna liczba strumieni (dźwięków) naraz
+    // dźwięki mogą być loopowane (loop value)
+    // stop() zatrzymuje dźwięk
+    // playback rate - pozwala zmienić częstotliwość dźwięku
+    // priorytet przydaje się tylko, gdy jest za dużo strumieni
+    // setVolume() pozwala wyciszyć dźwięk
+    private lateinit  var soundPool: SoundPool
+    private var sounds = MutableList(24) {i -> 0} // lista plików .wav
+
+    @SuppressLint("ClickableViewAccessibility")
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_piano)
+
+        val attr = AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .build()
+
+        soundPool = SoundPool.Builder()
+                .setMaxStreams(24)
+                .setAudioAttributes(attr)
+                .build()
+
+        selectedInstrument = intent.getStringExtra("instrumentName")!!
+        loadSounds()
+
+        // załaduj testowe klawisz
+        cButton = findViewById(R.id.c5)
+        cButton.setOnTouchListener { v, event ->
+            handleTouchC(event.action, 12)
+            /*
+            when(action) {
+                // wciśnięcie klawiszaprivate var keysArray = arrayOf(
+            "c4", "cis4", "d4", "dis4", "e4", "f4", "fis4", "g4", "gis4", "a4", "ais4", "h4", "c5")
+                MotionEvent.ACTION_DOWN -> {
+                    streamIDC5 = soundPool.play(sounds[15], 1F, 1F, 0, 0, 1F)
+                    cButton.setBackgroundColor(Color.GRAY)
+                }
+
+                // puszczenie klawisza
+                MotionEvent.ACTION_UP -> {
+                    cButton.setBackgroundColor(Color.WHITE)
+                    dampSound(streamIDC5)
+                }
+            }*/
+
+            true
+        }
+
+        cisButton = findViewById(R.id.cis5)
+        cisButton.setOnTouchListener { v, event ->
+
+            val action = event.action
+            handleTouchCis(action)
+
+            /*
+            when(action) {
+                // wciśnięcie klawisza
+                MotionEvent.ACTION_DOWN -> {
+                    streamIDC5 = soundPool.play(sounds[15], 1F, 1F, 0, 0, 1F)
+                    cButton.setBackgroundColor(Color.GRAY)
+                }
+
+                // puszczenie klawisza
+                MotionEvent.ACTION_UP -> {
+                    cButton.setBackgroundColor(Color.WHITE)
+                    dampSound(streamIDC5)
+                }
+            }*/
+
+            true
+        }
+    }
+
+    private fun handleTouchC(action: Int, keyNumber: Int) {
+
+        thread {
+            when(action) {
+                // wciśnięcie klawisza
+                MotionEvent.ACTION_DOWN -> {
+                    streamIDC5 = soundPool.play(sounds[keyNumber + 3], 1F, 1F, 0, 0, 1F)
+                    cButton.setBackgroundColor(Color.GRAY)
+                }
+
+                // puszczenie klawisza
+                MotionEvent.ACTION_UP -> {
+                    cButton.setBackgroundColor(Color.WHITE)
+                    dampSound(streamIDC5)
+                }
+            }
+        }
+    }
+
+    private fun handleTouchCis(action: Int) {
+        thread {
+            when(action) {
+                // wciśnięcie klawisza
+                MotionEvent.ACTION_DOWN -> {
+                    streamIDCis5 = soundPool.play(sounds[16], 1F, 1F, 0, 0, 1F)
+                    cisButton.setBackgroundColor(Color.GRAY)
+                }
+
+                // puszczenie klawisza
+                MotionEvent.ACTION_UP -> {
+                    cisButton.setBackgroundColor(Color.BLACK)
+                    dampSound(streamIDCis5)
+                }
+            }
+        }
+    }
+
+    public fun play(v: View) {
+        thread {
+            var streamID = 0
+
+            when (v.id) {
+                R.id.a4 -> streamID = soundPool.play(sounds[0], 1F, 1F, 0, 0, 1F)
+                R.id.ais4 -> streamID = soundPool.play(sounds[1], 1F, 1F, 0, 0, 1F)
+                R.id.b4 -> streamID = soundPool.play(sounds[2], 1F, 1F, 0, 0, 1F)
+                R.id.c4 -> streamID = soundPool.play(sounds[3], 1F, 1F, 0, 0, 1F)
+                R.id.cis4 -> streamID = soundPool.play(sounds[4], 1F, 1F, 0, 0, 1F)
+                R.id.d4 -> streamID = soundPool.play(sounds[5], 1F, 1F, 0, 0, 1F)
+                R.id.dis4 -> streamID = soundPool.play(sounds[6], 1F, 1F, 0, 0, 1F)
+                R.id.e4 -> streamID = soundPool.play(sounds[7], 1F, 1F, 0, 0, 1F)
+                R.id.f4 -> streamID = soundPool.play(sounds[8], 1F, 1F, 0, 0, 1F)
+                R.id.fis4 -> streamID = soundPool.play(sounds[9], 1F, 1F, 0, 0, 1F)
+                R.id.g4 -> streamID = soundPool.play(sounds[10], 1F, 1F, 0, 0, 1F)
+                R.id.gis4 -> streamID = soundPool.play(sounds[11], 1F, 1F, 0, 0, 1F)
+                R.id.a5 -> streamID = soundPool.play(sounds[12], 1F, 1F, 0, 0, 1F)
+                R.id.ais5 -> streamID = soundPool.play(sounds[13], 1F, 1F, 0, 0, 1F)
+                R.id.b5 -> streamID = soundPool.play(sounds[14], 1F, 1F, 0, 0, 1F)
+                // R.id.c5 -> streamID = soundPool.play(sounds[15], 1F, 1F, 0, 0, 1F)
+                // R.id.cis5 -> streamID = soundPool.play(sounds[16], 1F, 1F, 0, 0, 1F)
+                R.id.d5 -> streamID = soundPool.play(sounds[17], 1F, 1F, 0, 0, 1F)
+                R.id.dis5 -> streamID = soundPool.play(sounds[18], 1F, 1F, 0, 0, 1F)
+                R.id.e5 -> streamID = soundPool.play(sounds[19], 1F, 1F, 0, 0, 1F)
+                R.id.f5 -> streamID = soundPool.play(sounds[20], 1F, 1F, 0, 0, 1F)
+                R.id.fis5 -> streamID = soundPool.play(sounds[21], 1F, 1F, 0, 0, 1F)
+                R.id.g5 -> streamID = soundPool.play(sounds[22], 1F, 1F, 0, 0, 1F)
+                R.id.gis5 -> streamID = soundPool.play(sounds[23], 1F, 1F, 0, 0, 1F)
+                else -> { // Note the block
+                    print("lol")
+                }
+            }
+
+            print("I'm here")
+            dampSound(streamID)
+        }
+    }
+
+    // stłum dźwięk po zdjęciu palca z klawisza
+    private fun dampSound(streamID: Int) {
+        soundPool.setVolume(streamID, 0.9f, 0.9f)
+        // TimeUnit.MILLISECONDS.sleep(100L)soundPool.setVolume(streamID, 0.9f, 0.9f)
+        // TimeUnit.MILLISECONDS.sleep(100L)
+        Thread.sleep(100)
+        soundPool.setVolume(streamID, 0.8f, 0.8f)
+        // TimeUnit.MILLISECONDS.sleep(100L)
+        Thread.sleep(100)
+        soundPool.setVolume(streamID, 0.6f, 0.6f)
+        // TimeUnit.MILLISECONDS.sleep(100L)
+        Thread.sleep(100)
+        soundPool.setVolume(streamID, 0.4f, 0.4f)
+        // TimeUnit.MILLISECONDS.sleep(100L)
+        Thread.sleep(100)
+        soundPool.setVolume(streamID, 0.2f, 0.2f)
+        // TimeUnit.MILLISECONDS.sleep(100L)
+        Thread.sleep(100)
+        soundPool.setVolume(streamID, 0.1f, 0.1f)
+        // TimeUnit.MILLISECONDS.sleep(50L)
+        Thread.sleep(100)
+
+        soundPool.stop(streamID)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        soundPool.release()
+    }
+
+    private fun loadSounds() {
+        when (selectedInstrument) {
+            "Guitar" -> {
+                sounds[0] = soundPool.load(baseContext, R.raw.a3, 1)
+                sounds[1] = soundPool.load(baseContext, R.raw.ais3, 1)
+                sounds[2] = soundPool.load(baseContext, R.raw.b3, 1)
+                sounds[3] = soundPool.load(baseContext, R.raw.c3, 1)
+                sounds[4] = soundPool.load(baseContext, R.raw.cis3, 1)
+                sounds[5] = soundPool.load(baseContext, R.raw.d3, 1)
+                sounds[6] = soundPool.load(baseContext, R.raw.dis3, 1)
+                sounds[7] = soundPool.load(baseContext, R.raw.e3, 1)
+                sounds[8] = soundPool.load(baseContext, R.raw.f3, 1)
+                sounds[9] = soundPool.load(baseContext, R.raw.fis3, 1)
+                sounds[10] = soundPool.load(baseContext, R.raw.g3, 1)
+                sounds[11] = soundPool.load(baseContext, R.raw.gis3, 1)
+                sounds[12] = soundPool.load(baseContext, R.raw.a4, 1)
+                sounds[13] = soundPool.load(baseContext, R.raw.ais4, 1)
+                sounds[14] = soundPool.load(baseContext, R.raw.b4, 1)
+                sounds[15] = soundPool.load(baseContext, R.raw.c4, 1)
+                sounds[16] = soundPool.load(baseContext, R.raw.cis4, 1)
+                sounds[17] = soundPool.load(baseContext, R.raw.d4, 1)
+                sounds[18] = soundPool.load(baseContext, R.raw.dis4, 1)
+                sounds[19] = soundPool.load(baseContext, R.raw.e4, 1)
+                sounds[20] = soundPool.load(baseContext, R.raw.f4, 1)
+                sounds[21] = soundPool.load(baseContext, R.raw.fis4, 1)
+                sounds[22] = soundPool.load(baseContext, R.raw.g4, 1)
+                sounds[23] = soundPool.load(baseContext, R.raw.gis4, 1)
+            }
+
+            "Grand Piano" -> {
+                sounds[0] = soundPool.load(baseContext, R.raw.a4_piano, 1)
+                sounds[1] = soundPool.load(baseContext, R.raw.ais4_piano, 1)
+                sounds[2] = soundPool.load(baseContext, R.raw.b4_piano, 1)
+                sounds[3] = soundPool.load(baseContext, R.raw.c4_piano, 1)
+                sounds[4] = soundPool.load(baseContext, R.raw.cis4_piano, 1)
+                sounds[5] = soundPool.load(baseContext, R.raw.d4_piano, 1)
+                sounds[6] = soundPool.load(baseContext, R.raw.dis4_piano, 1)
+                sounds[7] = soundPool.load(baseContext, R.raw.e4_piano, 1)
+                sounds[8] = soundPool.load(baseContext, R.raw.f4_piano, 1)
+                sounds[9] = soundPool.load(baseContext, R.raw.fis4_piano, 1)
+                sounds[10] = soundPool.load(baseContext, R.raw.g4_piano, 1)
+                sounds[11] = soundPool.load(baseContext, R.raw.gis4_piano, 1)
+                sounds[12] = soundPool.load(baseContext, R.raw.a5_piano, 1)
+                sounds[13] = soundPool.load(baseContext, R.raw.ais5_piano, 1)
+                sounds[14] = soundPool.load(baseContext, R.raw.b5_piano, 1)
+                sounds[15] = soundPool.load(baseContext, R.raw.c5_piano, 1)
+                sounds[16] = soundPool.load(baseContext, R.raw.cis5_piano, 1)
+                sounds[17] = soundPool.load(baseContext, R.raw.d5_piano, 1)
+                sounds[18] = soundPool.load(baseContext, R.raw.dis5_piano, 1)
+                sounds[19] = soundPool.load(baseContext, R.raw.e5_piano, 1)
+                sounds[20] = soundPool.load(baseContext, R.raw.f5_piano, 1)
+                sounds[21] = soundPool.load(baseContext, R.raw.fis5_piano, 1)
+                sounds[22] = soundPool.load(baseContext, R.raw.g5_piano, 1)
+                sounds[23] = soundPool.load(baseContext, R.raw.gis5_piano, 1)
+            }
+
+            "Electric Piano" -> {
+                sounds[0] = soundPool.load(baseContext, R.raw.a4_elec, 1)
+                sounds[1] = soundPool.load(baseContext, R.raw.ais4_elec, 1)
+                sounds[2] = soundPool.load(baseContext, R.raw.b4_elec, 1)
+                sounds[3] = soundPool.load(baseContext, R.raw.c4_elec, 1)
+                sounds[4] = soundPool.load(baseContext, R.raw.cis4_elec, 1)
+                sounds[5] = soundPool.load(baseContext, R.raw.d4_elec, 1)
+                sounds[6] = soundPool.load(baseContext, R.raw.dis4_elec, 1)
+                sounds[7] = soundPool.load(baseContext, R.raw.e4_elec, 1)
+                sounds[8] = soundPool.load(baseContext, R.raw.f4_elec, 1)
+                sounds[9] = soundPool.load(baseContext, R.raw.fis4_elec, 1)
+                sounds[10] = soundPool.load(baseContext, R.raw.g4_elec, 1)
+                sounds[11] = soundPool.load(baseContext, R.raw.gis4_elec, 1)
+                sounds[12] = soundPool.load(baseContext, R.raw.a5_elec, 1)
+                sounds[13] = soundPool.load(baseContext, R.raw.ais5_elec, 1)
+                sounds[14] = soundPool.load(baseContext, R.raw.b5_elec, 1)
+                sounds[15] = soundPool.load(baseContext, R.raw.c5_elec, 1)
+                sounds[16] = soundPool.load(baseContext, R.raw.cis5_elec, 1)
+                sounds[17] = soundPool.load(baseContext, R.raw.d5_elec, 1)
+                sounds[18] = soundPool.load(baseContext, R.raw.dis5_elec, 1)
+                sounds[19] = soundPool.load(baseContext, R.raw.e5_elec, 1)
+                sounds[20] = soundPool.load(baseContext, R.raw.f5_elec, 1)
+                sounds[21] = soundPool.load(baseContext, R.raw.fis5_elec, 1)
+                sounds[22] = soundPool.load(baseContext, R.raw.g5_elec, 1)
+                sounds[23] = soundPool.load(baseContext, R.raw.gis5_elec, 1)
+            }
+
+            "Organ" -> {
+                TODO("Not implemented yet!")
+            }
+        }
+    }
+}

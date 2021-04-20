@@ -15,7 +15,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="play"
+        android:gravity="bottom|center_horizontal"
+        android:text="C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,7 +28,8 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="play"
+        android:gravity="bottom|center_horizontal"
+        android:text="D"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/c4"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,7 +41,8 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="play"
+        android:gravity="bottom|center_horizontal"
+        android:text="E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/d4"
         app:layout_constraintTop_toTopOf="parent" />
@@ -51,7 +54,8 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="play"
+        android:gravity="bottom|center_horizontal"
+        android:text="F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/e4"
         app:layout_constraintTop_toTopOf="parent" />
@@ -63,7 +67,8 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="play"
+        android:gravity="bottom|center_horizontal"
+        android:text="F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/e5"
         app:layout_constraintTop_toTopOf="parent" />
@@ -75,7 +80,8 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="play"
+        android:gravity="bottom|center_horizontal"
+        android:text="D"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/c5"
         app:layout_constraintTop_toTopOf="parent" />
@@ -87,7 +93,8 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="play"
+        android:gravity="bottom|center_horizontal"
+        android:text="B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/a4"
         app:layout_constraintTop_toTopOf="parent" />
@@ -99,7 +106,8 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="play"
+        android:gravity="bottom|center_horizontal"
+        android:text="A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/g4"
         app:layout_constraintTop_toTopOf="parent" />
@@ -111,7 +119,8 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="play"
+        android:gravity="bottom|center_horizontal"
+        android:text="C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/b4"
         app:layout_constraintTop_toTopOf="parent" />
@@ -123,7 +132,8 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="play"
+        android:gravity="bottom|center_horizontal"
+        android:text="G"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/f5"
         app:layout_constraintTop_toTopOf="parent"
@@ -136,7 +146,8 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="play"
+        android:gravity="bottom|center_horizontal"
+        android:text="G"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/f4"
         app:layout_constraintTop_toTopOf="parent" />
@@ -148,7 +159,8 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="play"
+        android:gravity="bottom|center_horizontal"
+        android:text="E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/d5"
         app:layout_constraintTop_toTopOf="parent" />
@@ -160,7 +172,8 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="play"
+        android:gravity="bottom|center_horizontal"
+        android:text="A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/g5"
         app:layout_constraintTop_toTopOf="parent" />
@@ -172,7 +185,8 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="play"
+        android:gravity="bottom|center_horizontal"
+        android:text="B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/a5"
         app:layout_constraintTop_toTopOf="parent" />
@@ -183,7 +197,9 @@
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="8dp"
-        android:onClick="play"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="C#"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -193,7 +209,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="8dp"
-        android:onClick="play"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="D#"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/cis4"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -203,7 +221,9 @@
         android:layout_marginStart="62dp"
         android:layout_marginLeft="62dp"
         android:layout_marginTop="8dp"
-        android:onClick="play"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="F#"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/dis4"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -213,7 +233,9 @@
         android:layout_marginStart="11dp"
         android:layout_marginLeft="11dp"
         android:layout_marginTop="8dp"
-        android:onClick="play"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="G#"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/fis4"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -223,7 +245,9 @@
         android:layout_marginStart="62dp"
         android:layout_marginLeft="62dp"
         android:layout_marginTop="8dp"
-        android:onClick="play"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="C#"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/ais4"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -233,7 +257,9 @@
         android:layout_marginStart="11dp"
         android:layout_marginLeft="11dp"
         android:layout_marginTop="8dp"
-        android:onClick="play"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="A#"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/gis4"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -243,7 +269,9 @@
         android:layout_marginStart="62dp"
         android:layout_marginLeft="62dp"
         android:layout_marginTop="8dp"
-        android:onClick="play"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="F#"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/dis5"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -253,7 +281,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="8dp"
-        android:onClick="play"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="D#"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/cis5"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -263,7 +293,9 @@
         android:layout_marginStart="11dp"
         android:layout_marginLeft="11dp"
         android:layout_marginTop="8dp"
-        android:onClick="play"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="G#"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/fis5"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -273,7 +305,9 @@
         android:layout_marginStart="11dp"
         android:layout_marginLeft="11dp"
         android:layout_marginTop="8dp"
-        android:onClick="play"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="A#"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/gis5"
         app:layout_constraintTop_toTopOf="parent" />
 
