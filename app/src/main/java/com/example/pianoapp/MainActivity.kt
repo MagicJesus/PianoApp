@@ -36,27 +36,29 @@ class MainActivity : AppCompatActivity() {
                 selectedInstrument = spinner.selectedItem.toString()
             }
 
-            // to raczej do wywalenia
             override fun onNothingSelected(parent: AdapterView<*>?) { }
         }
     }
 
+    // przejście w .xml
     fun startPianoActivity(view: View) {
-        var toggleButtonChecked = "True"
+        /*
+        var tonesButtonChecked = "True"
         var sustainButtonChecked = "True"
 
-        if(!toggleTonesButton.isChecked) {
-            toggleButtonChecked = "False"
-            sustainButtonChecked = "False"
+        if (!toggleTonesButton.isChecked) {
+            tonesButtonChecked = "False"
         }
+
+        if (!) {
+            sustainButtonChecked = "False"
+        }*/
 
         val intent = Intent(this, PianoActivity::class.java)
         intent.putExtra("instrumentName", selectedInstrument)
-        intent.putExtra("showTones", toggleButtonChecked)
-        intent.putExtra("toggleSustain", sustainButtonChecked)
+        intent.putExtra("toggleTones", toggleTonesButton.isChecked.toString())
+        intent.putExtra("toggleSustain", toggleSustainButton.isChecked.toString())
 
         startActivity(intent)
     }
-
-
 }

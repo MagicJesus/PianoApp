@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="10dp"
     android:background="@color/teal_700"
+    android:paddingLeft="10dp"
     tools:context=".PianoActivity">
 
     <Button

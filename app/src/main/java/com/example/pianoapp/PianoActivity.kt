@@ -42,8 +42,8 @@ class PianoActivity : AppCompatActivity() {
                 .build()
 
         selectedInstrument = intent.getStringExtra("instrumentName")!!
-        val showTones = intent.getStringExtra("showTones")!!.toBoolean()
-        var toggleSustain = intent.getStringExtra("toggleSustain")!!.toBoolean()
+        val toggleTones = intent.getStringExtra("toggleTones")!!.toBoolean()
+        val toggleSustain = intent.getStringExtra("toggleSustain")!!.toBoolean()
         loadSounds() // załadowanie plików .wav
 
         keysArray = arrayOf(
@@ -61,7 +61,7 @@ class PianoActivity : AppCompatActivity() {
                 PianoKey(findViewById(R.id.ais5), 0, true), PianoKey(findViewById(R.id.b5), 0))
 
         // wyłącz podpisy klawiszów
-        if (!showTones) {
+        if (!toggleTones) {
             keysArray.forEach { it -> it.setNotVisible()}
         }
 
@@ -72,7 +72,6 @@ class PianoActivity : AppCompatActivity() {
         }
     }
 
-    // zamiast android:onClick="play"
     private fun handleTouch(action: Int, keyNumber: Int, sustain: Boolean) {
         when (action) {
             // wciśnięcie klawisza
@@ -85,10 +84,9 @@ class PianoActivity : AppCompatActivity() {
             // puszczenie klawisza
             MotionEvent.ACTION_UP -> {
                 keysArray[keyNumber].setUncliked()
-                if (! sustain){
-                thread {
-                    dampSound(keysArray[keyNumber].streamID)
-                }
+                if (!sustain){
+                thread { // nowy wątek, żeby sleep nie przeszkadzał w dalszym naciskaniu
+                    dampSound(keysArray[keyNumber].streamID) }
                 }
             }
         }
