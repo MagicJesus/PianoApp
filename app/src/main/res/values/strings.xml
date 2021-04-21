@@ -4,4 +4,6 @@
     <string name="playString">PLAY</string>
     <string name="displayTonesOn">Display tones: ON</string>
     <string name="displayTonesOff">Display tones: OFF</string>
+    <string name="displaySustainOn">Sustain: ON</string>
+    <string name="displaySustainOff">Sustain: OFF</string>
 </resources>

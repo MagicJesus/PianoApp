@@ -15,14 +15,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var instruments: Array<String>
     private lateinit var arrAdapter: ArrayAdapter<String>
     private lateinit var selectedInstrument: String
-    private lateinit var toggleButton: ToggleButton
+    private lateinit var toggleTonesButton: ToggleButton
+    private lateinit var toggleSustainButton: ToggleButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         spinner = findViewById(R.id.instrumentSpinner)
-        toggleButton = findViewById(R.id.showTonesToggleButton)
+        toggleTonesButton = findViewById(R.id.showTonesToggleButton)
+        toggleSustainButton = findViewById(R.id.sustainToggleButton)
         instruments = arrayOf("Grand Piano", "Organ", "Guitar", "Electric Piano")
         arrAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item,
             instruments)
@@ -41,14 +43,17 @@ class MainActivity : AppCompatActivity() {
 
     fun startPianoActivity(view: View) {
         var toggleButtonChecked = "True"
+        var sustainButtonChecked = "True"
 
-        if(!toggleButton.isChecked) {
+        if(!toggleTonesButton.isChecked) {
             toggleButtonChecked = "False"
+            sustainButtonChecked = "False"
         }
 
         val intent = Intent(this, PianoActivity::class.java)
         intent.putExtra("instrumentName", selectedInstrument)
         intent.putExtra("showTones", toggleButtonChecked)
+        intent.putExtra("toggleSustain", sustainButtonChecked)
 
         startActivity(intent)
     }

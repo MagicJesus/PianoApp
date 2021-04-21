@@ -43,6 +43,7 @@ class PianoActivity : AppCompatActivity() {
 
         selectedInstrument = intent.getStringExtra("instrumentName")!!
         val showTones = intent.getStringExtra("showTones")!!.toBoolean()
+        var toggleSustain = intent.getStringExtra("toggleSustain")!!.toBoolean()
         loadSounds() // załadowanie plików .wav
 
         keysArray = arrayOf(
@@ -66,13 +67,13 @@ class PianoActivity : AppCompatActivity() {
 
         // dla każdego przycisku listener obsł↓gujący wciskanie, przytrzymanie i puszczanie klawisza
         keysArray.forEachIndexed {index, it -> it.button.setOnTouchListener { v, event ->
-            handleTouch(event.action, index)
+            handleTouch(event.action, index, toggleSustain)
             true }
         }
     }
 
     // zamiast android:onClick="play"
-    private fun handleTouch(action: Int, keyNumber: Int) {
+    private fun handleTouch(action: Int, keyNumber: Int, sustain: Boolean) {
         when (action) {
             // wciśnięcie klawisza
             MotionEvent.ACTION_DOWN -> {
@@ -84,9 +85,10 @@ class PianoActivity : AppCompatActivity() {
             // puszczenie klawisza
             MotionEvent.ACTION_UP -> {
                 keysArray[keyNumber].setUncliked()
-
+                if (! sustain){
                 thread {
                     dampSound(keysArray[keyNumber].streamID)
+                }
                 }
             }
         }
@@ -116,30 +118,30 @@ class PianoActivity : AppCompatActivity() {
     private fun loadSounds() {
         when (selectedInstrument) {
             "Guitar" -> {
-                sounds[0] = soundPool.load(baseContext, R.raw.c3, 1)
-                sounds[1] = soundPool.load(baseContext, R.raw.cis3, 1)
-                sounds[2] = soundPool.load(baseContext, R.raw.d3, 1)
-                sounds[3] = soundPool.load(baseContext, R.raw.dis3, 1)
-                sounds[4] = soundPool.load(baseContext, R.raw.e3, 1)
-                sounds[5] = soundPool.load(baseContext, R.raw.f3, 1)
-                sounds[6] = soundPool.load(baseContext, R.raw.fis3, 1)
-                sounds[7] = soundPool.load(baseContext, R.raw.g3, 1)
-                sounds[8] = soundPool.load(baseContext, R.raw.gis3, 1)
-                sounds[9] = soundPool.load(baseContext, R.raw.a3, 1)
-                sounds[10] = soundPool.load(baseContext, R.raw.ais3, 1)
-                sounds[11] = soundPool.load(baseContext, R.raw.b3, 1)
-                sounds[12] = soundPool.load(baseContext, R.raw.c4, 1)
-                sounds[13] = soundPool.load(baseContext, R.raw.cis4, 1)
-                sounds[14] = soundPool.load(baseContext, R.raw.d4, 1)
-                sounds[15] = soundPool.load(baseContext, R.raw.dis4, 1)
-                sounds[16] = soundPool.load(baseContext, R.raw.e4, 1)
-                sounds[17] = soundPool.load(baseContext, R.raw.f4, 1)
-                sounds[18] = soundPool.load(baseContext, R.raw.fis4, 1)
-                sounds[19] = soundPool.load(baseContext, R.raw.g4, 1)
-                sounds[20] = soundPool.load(baseContext, R.raw.gis4, 1)
-                sounds[21] = soundPool.load(baseContext, R.raw.a4, 1)
-                sounds[22] = soundPool.load(baseContext, R.raw.ais4, 1)
-                sounds[23] = soundPool.load(baseContext, R.raw.b4, 1)
+                sounds[0] = soundPool.load(baseContext, R.raw.c4_guitar, 1)
+                sounds[1] = soundPool.load(baseContext, R.raw.cis4_guitar, 1)
+                sounds[2] = soundPool.load(baseContext, R.raw.d4_guitar, 1)
+                sounds[3] = soundPool.load(baseContext, R.raw.dis4_guitar, 1)
+                sounds[4] = soundPool.load(baseContext, R.raw.e4_guitar, 1)
+                sounds[5] = soundPool.load(baseContext, R.raw.f4_guitar, 1)
+                sounds[6] = soundPool.load(baseContext, R.raw.fis4_guitar, 1)
+                sounds[7] = soundPool.load(baseContext, R.raw.g4_guitar, 1)
+                sounds[8] = soundPool.load(baseContext, R.raw.gis4_guitar, 1)
+                sounds[9] = soundPool.load(baseContext, R.raw.a4_guitar, 1)
+                sounds[10] = soundPool.load(baseContext, R.raw.ais4_guitar, 1)
+                sounds[11] = soundPool.load(baseContext, R.raw.b4_guitar, 1)
+                sounds[12] = soundPool.load(baseContext, R.raw.c5_guitar, 1)
+                sounds[13] = soundPool.load(baseContext, R.raw.cis5_guitar, 1)
+                sounds[14] = soundPool.load(baseContext, R.raw.d5_guitar, 1)
+                sounds[15] = soundPool.load(baseContext, R.raw.dis5_guitar, 1)
+                sounds[16] = soundPool.load(baseContext, R.raw.e5_guitar, 1)
+                sounds[17] = soundPool.load(baseContext, R.raw.f5_guitar, 1)
+                sounds[18] = soundPool.load(baseContext, R.raw.fis5_guitar, 1)
+                sounds[19] = soundPool.load(baseContext, R.raw.g5_guitar, 1)
+                sounds[20] = soundPool.load(baseContext, R.raw.gis5_guitar, 1)
+                sounds[21] = soundPool.load(baseContext, R.raw.a5_guitar, 1)
+                sounds[22] = soundPool.load(baseContext, R.raw.ais5_guitar, 1)
+                sounds[23] = soundPool.load(baseContext, R.raw.b5_guitar, 1)
             }
 
             "Grand Piano" -> {
@@ -197,7 +199,30 @@ class PianoActivity : AppCompatActivity() {
             }
 
             "Organ" -> {
-                TODO("Not implemented yet!")
+                sounds[0] = soundPool.load(baseContext, R.raw.c4_organ, 1)
+                sounds[1] = soundPool.load(baseContext, R.raw.cis4_organ, 1)
+                sounds[2] = soundPool.load(baseContext, R.raw.d4_organ, 1)
+                sounds[3] = soundPool.load(baseContext, R.raw.dis4_organ, 1)
+                sounds[4] = soundPool.load(baseContext, R.raw.e4_organ, 1)
+                sounds[5] = soundPool.load(baseContext, R.raw.f4_organ, 1)
+                sounds[6] = soundPool.load(baseContext, R.raw.fis4_organ, 1)
+                sounds[7] = soundPool.load(baseContext, R.raw.g4_organ, 1)
+                sounds[8] = soundPool.load(baseContext, R.raw.gis4_organ, 1)
+                sounds[9] = soundPool.load(baseContext, R.raw.a4_organ, 1)
+                sounds[10] = soundPool.load(baseContext, R.raw.ais4_organ, 1)
+                sounds[11] = soundPool.load(baseContext, R.raw.b4_organ, 1)
+                sounds[12] = soundPool.load(baseContext, R.raw.c5_organ, 1)
+                sounds[13] = soundPool.load(baseContext, R.raw.cis5_organ, 1)
+                sounds[14] = soundPool.load(baseContext, R.raw.d5_organ, 1)
+                sounds[15] = soundPool.load(baseContext, R.raw.dis5_organ, 1)
+                sounds[16] = soundPool.load(baseContext, R.raw.e5_organ, 1)
+                sounds[17] = soundPool.load(baseContext, R.raw.f5_organ, 1)
+                sounds[18] = soundPool.load(baseContext, R.raw.fis5_organ, 1)
+                sounds[19] = soundPool.load(baseContext, R.raw.g5_organ, 1)
+                sounds[20] = soundPool.load(baseContext, R.raw.gis5_organ, 1)
+                sounds[21] = soundPool.load(baseContext, R.raw.a5_organ, 1)
+                sounds[22] = soundPool.load(baseContext, R.raw.ais5_organ, 1)
+                sounds[23] = soundPool.load(baseContext, R.raw.b5_organ, 1)
             }
         }
     }

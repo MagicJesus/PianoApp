@@ -7,6 +7,17 @@
     android:background="@color/teal_700"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/pianoImageVIew"
+        android:layout_width="64sp"
+        android:layout_height="64sp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/piano"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@android:drawable/sym_def_app_icon" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -15,26 +26,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.073" />
-
-    <Spinner
-        android:id="@+id/instrumentSpinner"
-        android:layout_width="243dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="83dp"
-        android:layout_marginLeft="83dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="83dp"
-        android:layout_marginRight="83dp"
-        android:background="@android:drawable/spinner_dropdown_background"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pianoImageVIew" />
+        app:layout_constraintVertical_bias="0.025" />
 
     <Button
         android:id="@+id/startPianoActivityButton"
@@ -49,32 +43,49 @@
         android:onClick="startPianoActivity"
         android:text="@string/playString"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/showTonesToggleButton" />
 
+    <Spinner
+        android:id="@+id/instrumentSpinner"
+        android:layout_width="243dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="83dp"
+        android:layout_marginLeft="83dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="83dp"
+        android:layout_marginRight="83dp"
+        android:background="@android:drawable/spinner_dropdown_background"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pianoImageVIew" />
+
     <ToggleButton
         android:id="@+id/showTonesToggleButton"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:background="@drawable/button_test"
         android:textOff="@string/displayTonesOff"
         android:textOn="@string/displayTonesOn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/startPianoActivityButton"
         app:layout_constraintTop_toBottomOf="@+id/instrumentSpinner" />
 
-    <ImageView
-        android:id="@+id/pianoImageVIew"
-        android:layout_width="64sp"
-        android:layout_height="64sp"
+    <ToggleButton
+        android:id="@+id/sustainToggleButton"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
         android:layout_marginTop="16dp"
-        android:src="@drawable/piano"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@android:drawable/sym_def_app_icon" />
+        android:background="@drawable/button_test"
+        android:textOff="@string/displaySustainOff"
+        android:textOn="@string/displaySustainOn"
+        app:layout_constraintStart_toStartOf="@+id/startPianoActivityButton"
+        app:layout_constraintTop_toBottomOf="@+id/instrumentSpinner" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

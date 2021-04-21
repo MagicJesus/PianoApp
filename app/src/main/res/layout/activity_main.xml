@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
         android:layout_marginLeft="161dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="45dp"
         android:layout_marginEnd="161dp"
         android:layout_marginRight="161dp"
         android:background="@drawable/button_test"
@@ -57,12 +57,26 @@
         android:id="@+id/showTonesToggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        android:background="@drawable/button_test"
         android:textOff="@string/displayTonesOff"
         android:textOn="@string/displayTonesOn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/startPianoActivityButton"
+        app:layout_constraintTop_toBottomOf="@+id/instrumentSpinner" />
+
+    <ToggleButton
+        android:id="@+id/sustainToggleButton"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_test"
+        android:textOff="@string/displaySustainOff"
+        android:textOn="@string/displaySustainOn"
+        app:layout_constraintStart_toStartOf="@+id/startPianoActivityButton"
         app:layout_constraintTop_toBottomOf="@+id/instrumentSpinner" />
 
     <ImageView
